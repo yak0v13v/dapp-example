@@ -1,10 +1,11 @@
 import { Avatar, Button, Card, DropdownMenu, Grid, Text } from "@radix-ui/themes";
-import { useAccount, useDisconnect } from "wagmi";
+import { useAccount, useDisconnect, useSwitchChain } from "wagmi";
 import styles from "./user-card.module.css";
 
 const UserCard = () => {
   const { address, chain } = useAccount();
   const { disconnect } = useDisconnect();
+  const { chains, switchChain } = useSwitchChain();
 
   return (
     <Card>
@@ -40,6 +41,19 @@ const UserCard = () => {
           </DropdownMenu.Trigger>
 
           <DropdownMenu.Content>
+            {chains.map((item) => (
+              <DropdownMenu.Item
+                key={item.id}
+                color="blue"
+                onClick={() => switchChain({ chainId: item.id })}
+                disabled={chain?.id === item.id}
+              >
+                Switch to {item.name}
+              </DropdownMenu.Item>
+            ))}
+
+            <DropdownMenu.Separator />
+
             <DropdownMenu.Item color="red" onClick={() => disconnect()}>
               Disconnect
             </DropdownMenu.Item>
