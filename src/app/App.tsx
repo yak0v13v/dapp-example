@@ -1,8 +1,13 @@
+import { Home } from "@/pages/home";
 import { Providers } from "./Providers";
 import "@radix-ui/themes/styles.css";
 
 function App() {
-  return <Providers>test</Providers>;
+  return (
+    <Providers>
+      <Home />
+    </Providers>
+  );
 }
 
 export default App;
