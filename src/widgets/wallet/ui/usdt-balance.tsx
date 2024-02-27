@@ -13,6 +13,10 @@ const UsdtBalance = ({ chainId, accountAddress }: Props) => {
     accountAddress,
   });
 
+  if (!value) {
+    return null;
+  }
+
   return (
     <AssetCard symbol={symbol} value={value}>
       <SendUsdt />

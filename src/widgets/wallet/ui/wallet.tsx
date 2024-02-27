@@ -5,6 +5,7 @@ import { useAccount, useBalance } from "wagmi";
 import { formatEther } from "viem";
 import { UsdtBalance } from "./usdt-balance";
 import { isUsdtSupported } from "@/shared/lib/usdt";
+import { SendNative } from "@/features/send-native";
 
 const Wallet = () => {
   const { address, chainId } = useAccount();
@@ -14,7 +15,9 @@ const Wallet = () => {
     <Container size="2">
       <UserCard />
       {mainBalance && (
-        <AssetCard symbol={mainBalance.symbol} value={formatEther(mainBalance.value)} />
+        <AssetCard symbol={mainBalance.symbol} value={formatEther(mainBalance.value)}>
+          <SendNative symbol={mainBalance.symbol} />
+        </AssetCard>
       )}
       {address && chainId && isUsdtSupported(chainId) && (
         <UsdtBalance accountAddress={address} chainId={chainId} />

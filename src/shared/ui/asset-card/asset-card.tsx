@@ -15,7 +15,7 @@ const AssetCard = ({ className, symbol, value, children }: Props) => {
 
   return (
     <Card className={classes}>
-      <Grid columns="1fr 1fr">
+      <Grid columns="1fr 1fr" align="center">
         <Box>
           <Text as="span" size="2" weight="bold">
             {symbol + ": "}
