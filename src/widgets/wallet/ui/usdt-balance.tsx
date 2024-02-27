@@ -1,3 +1,4 @@
+import { SendUsdt } from "@/features/send-usdt";
 import { useReadUsdtContract } from "@/shared/lib/hooks/use-read-usdt";
 import { AssetCard } from "@/shared/ui/asset-card";
 
@@ -12,7 +13,11 @@ const UsdtBalance = ({ chainId, accountAddress }: Props) => {
     accountAddress,
   });
 
-  return <AssetCard symbol={symbol} value={value} />;
+  return (
+    <AssetCard symbol={symbol} value={value}>
+      <SendUsdt />
+    </AssetCard>
+  );
 };
 
 export { UsdtBalance };
