@@ -4,7 +4,7 @@ import { useId } from "react";
 import { useForm } from "react-hook-form";
 import { sendFormSchema } from "../lib/send-form-schema";
 import { useSendTransaction, useWaitForTransactionReceipt } from "wagmi";
-import { EstimateGasExecutionError, parseEther } from "viem";
+import { parseEther } from "viem";
 
 type Props = {
   symbol: string;
