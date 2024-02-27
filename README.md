@@ -2,6 +2,8 @@
 
 ## DEMO: [https://dapp-example-delta.vercel.app/](https://dapp-example-delta.vercel.app/)
 
+### Don't forget to install the browser extension like MetaMask
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
