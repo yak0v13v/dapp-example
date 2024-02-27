@@ -1,4 +1,4 @@
-import { Button, Container, Flex, Heading } from "@radix-ui/themes";
+import { Blockquote, Button, Container, Flex, Heading } from "@radix-ui/themes";
 import { useConnect } from "wagmi";
 import styles from "./connect-wallet.module.css";
 
@@ -15,6 +15,9 @@ const ConnectWallet = () => {
           </Button>
         ))}
       </Flex>
+      <Blockquote mt="4" color="blue">
+        Use Sepolia, Goerli or Etherium Mainnet
+      </Blockquote>
     </Container>
   );
 };
